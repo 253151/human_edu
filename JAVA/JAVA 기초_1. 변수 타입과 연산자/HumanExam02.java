@@ -5,16 +5,16 @@ public class HumanExam02 {
 	public static void main(String[] args) {
 		int human;		// human이란 변수를 선언.
 		human = 100;	// human이란 변수에 100을 대입
-		System.out.println(human);
+		System.out.println(human);	// 100이 출력됨
 		
-		int result = human + 10;	// human(100) + 10 ==>110
-		System.out.println (result);
+		int result = human + 10;	
+		System.out.println (result);  // human(100) + 10 ==>110
 		
 		char human1 = 'A'; //char 타입은 홑따옴표라는 것에 주의
 		System.out.println (human1);
-		char human2 =66;
+		char human2 =66;	// char는 값을 정수형으로 저장, 출력시엔 문자 B로 줄력됨
 		System.out.println (human2);
-		System.out.println ((int)human1);
+		System.out.println ((int)human1);	// int로 변환하였으므로 65.
 		System.out.println ("---------------------------------");
 		
 		long human3 = 20;
@@ -27,10 +27,10 @@ public class HumanExam02 {
 		double human5 = 3.14159;
 		System.out.println (human5);
 		float human6 = 3.14159f;
-		System.out.println(human6);		//float형을 사용할 때는 끝에 f륿 써야 함
+		System.out.println(human6);		//float형을 사용할 때는 끝에 f를 써야 함
 		System.out.println ("---------------------------------");
 		
-		boolean human7 = 10>11;
+		boolean human7 = 10>11;		// 10은 11보다 크지 않으므로 false.
 		System.out.println (human7);
 		System.out.println ("---------------------------------");
 		
