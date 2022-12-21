@@ -1,0 +1,15 @@
+
+# Index
+
+
+- ======조건문=====
+
+- 1/HumanExam~HumanExam03_2
+    - 연산자와 if, if-else, if-else if-else 조건문 사용하여 점수로 합격/불합격, 성적 출력하는 프로그램 만들기
+
+- 1/HumanExam04
+    - 연산자와 중첩 if문 사용하여 합/불 > 장학생 여부와 시험자격 출력 프로그램
+
+- 1/HumanExam05_1~2
+    - char 변수 사용, if-else문으로 회원등급 출력
+    - char 변수 사용, switch-case문으로 회원등급 출력
