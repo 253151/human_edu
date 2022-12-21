@@ -1,0 +1,25 @@
+
+
+
+Github에 데이터 넣기
+    - 대상 폴더에 마우스 오른쪽 > git bash here
+    - git add .
+    - git commit -m "updated"
+    - git push .
+
+
+Notion, Slack 설치
+
+# R 
+
+# R Tools
+
+# R Studio
+
+
+    - 패키지 설치: install.package("패키지명")
+         불러오기: library (패키지명)
+
+    - R에 대한 이야기, R 실습
+
+ 
