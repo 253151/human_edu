@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script> 
+    <style>
+        body {
+            background-image:url(background.jpg);
+            
+        }
+      table {
+        width:70%; 
+        margin: auto;
+        /* text-align:left; */
+        background-color: rgba(0,0,0,0.3);
+        }
+
+    table, td {
+        border-collapse : collapse;
+        /* text-align: center; */
+    };
+      </style>
+</head>
+<body>
+    <table>
+    <tr>
+        <td>메뉴목록</td><td>주문내역</td><td>매출내역</td><br>
+    </tr>   
+    
+    <tr>
+        <td>
+
+            <select id="selMenu" size="12" style="width:240px">
+                <option value1="Americano" value2="2500">Americano,2500</option>
+                <option value1="Latte" value2="3000">Latte,3000</option>
+                <option value1="Cappuccino" value2='3000'>Cappuccino,3000</option>
+                <option value1="Mocca" value2='3200'>Mocca,3200</option>
+                <option value1="Espresso" value2='2300'>Espresso,2300</option>
+                <option value1="ColdBrew" value2='2700'>ColdBrew,2700</option>
+            </select><br><br>
+            
+        </td>
+
+        <td>
+
+            <select id="selOrder" size="12" style='width:240px'>
+            </select><br><br>
+            
+        </td>
+
+        <td>
+
+            <select id="selSales" size="12" style='width:240px'>
+                
+            </select><br><br>
+            
+
+        </td>
+    </tr>
+    <tr >
+        <td>메뉴명 <input readonly="" type="text" id="menuName"><br>
+            <div class="count">수량
+                <input type="text" class="inp" value="1" />
+                <button type="button" class="minus">-</button>
+                <button type="button" class="plus">+</button>
+            </div>
+            
+            가격 <input readonly="" type="text" id="price"><br>
+            <center><button id="btnAdd">추가</button>
+            <button id="btnDel">지우기</button></center></td>
+
+            <td>총수량 <input readonly="" type="text" id="fNum"><br>
+            총액 <input readonly="" type="text" id="fPrice"><br>
+            모바일번호<input type="text" id="mobile"><br>
+            <center><button id="orderDel">주문삭제</button>
+            <button id="orderCom">주문완료</button></center></td>
+        
+            <td>매출총액<input readonly type=text id=sales></td>
+    </tr>
+</table>
+    <script>
+        $(document)
+    // 메뉴목록
+    .on('click','#selMenu',function(){
+        let n= $('#selMenu> option:selected').attr('value1');
+        $('#menuName').val(n);
+        let p= $('#selMenu> option:selected').attr('value2');
+        $('#price').val(p);
+    })
+
+    // 주문내역
+    .on('click','#btnAdd',function(){
+
+        let a = $('#menuName').val(); 
+        let b = $('.inp').val();
+        let c = $('#price').val();
+        let B=parseInt(b);
+        let C=parseInt(c);
+        let d = B * C;
+        let sumNum=0;
+        let sumPrice=0;
+        $('#selOrder').append("<option>"+a+' '+b+' '+d+"</option>");
+
+        // 총액
+        $('#selOrder option').each(function() {
+        let str=$(this).text();
+        let arr=str.split(' ');
+        sumPrice=sumPrice+parseInt(arr[2]);
+        })
+        $('#fPrice').val(sumPrice);
+
+        // 총수량
+        $('#selOrder option').each(function() {
+        let strNum=$(this).text();
+        let arrNum=strNum.split(' ');
+        sumNum=sumNum+parseInt(arrNum[1]);
+        })
+        $('#fNum').val(sumNum);
+        
+        
+    })
+
+
+    // 메뉴목록 지우기
+    .on('click','#btnDel',function(){
+        let delN = $('#menuName').val("");
+        let delC = $('.inp').val("1");
+        let delP = $('#price').val("");
+        
+    })
+
+    // 주문삭제
+    .on('click','#orderDel',function(){
+        $("#selOrder option:selected").remove();
+    })
+
+    // 주문완료(매출 내역 표시)
+    .on('click','#orderCom',function(){
+        
+        // let e=$('#selOrder option').val();
+        // $('#selSales').append(comM+' '+e+'\n');
+        let comM=$('#mobile').val();
+        let sumSales=0;
+        $('#selOrder option').each(function() {
+        let str=$(this).text();
+        let arr=str.split(' ');
+
+
+        $('#selSales').append('<option>'+comM+' '+arr[0]+' '+arr[1]+' '+arr[2]+'</option>');     
+
+        })
+
+    $('#selSales option').each(function() {
+        let strSales=$(this).text();
+        let arrSales=strSales.split(' ');
+        sumSales=sumSales+parseInt(arrSales[3]);
+        console.log(arrSales);
+        
+        })
+        $('#sales').val(sumSales);
+        console.log(sumSales);
+
+        console.log(sales);
+        
+        // let e=$('#selOrder option:selected').val();
+        // $('#selSales').append("<option>"+comM+' '+e+'\n'+"</option>");
+
+        // $('#selOrder').change(function(){
+        //     $("#selSales").append("<option>"+$(this).val()+"</option>");
+        // })
+    })
+
+    // 수량
+    $('.count :button').on({
+    'click' : function(e){
+        e.preventDefault();
+        var $count = $(this).parent('.count').find('.inp');
+        var now = parseInt($count.val());
+        var min = 1; var max = 999; var num = now;
+        if($(this).hasClass('minus')){
+            var type = 'm';
+        }else{
+            var type = 'p';
+        }
+        if(type=='m'){
+            if(now>min){
+                num = now - 1;
+            }
+        }else{
+            if(now<max){
+                num = now + 1;
+            }
+        }
+        if(num != now){
+            $count.val(num);
+        }
+    }
+    })
+    </script>
+
+</body>
+</html>

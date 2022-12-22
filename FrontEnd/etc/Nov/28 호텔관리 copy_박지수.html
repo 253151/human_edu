@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</head>
+<style>
+#dvHotel {  width:760px; height:700px; margin:auto; }   
+#hotel0 { width:700px; height:620px; background-color:lightgrey; }
+#hotel1 { width:700px; height:620px; background-color:lightgoldenrodyellow; }
+#hotel2 { width:700px; height:620px; background-color:lightcyan; font-size: 13px;}
+
+</style>
+<body align="center">
+    <h1>호텔관리 시스템</h1>
+    <div id="dvHotel" align="center">
+        <ul>
+            <li><a href='#hotel0'>객실종류관리</a></li>
+            <li><a href='#hotel1'>객실관리</a></li>
+            <li><a href='#hotel2'>예약관리</a></li>
+        </ul>
+        <div id="hotel0" >
+                <ul style="float:left;">
+                객실종류<br>
+                <select id="selType" size="12" style='width:280px'>
+                    <option value="1">Suite Room</option>
+                    <option value="2">Family Room</option>
+                    <option value="3">Single Room</option>
+                    <option value="4">Deluxe Room</option>
+                    </select></ul>
+                <ul style="text-align:center ;"><br>
+                    객실종류번호 <input type="text" id="typeNum"/><br><br>
+                객실종류명 <input type="text" id="typeName"/><br><br>
+                <button type="button" id="btnAddType">등록</button>
+                <button type="button" id="btnDelType">삭제</button>
+                </ul>
+
+        </div>
+        <div id="hotel1">
+            <ul style="float:left;">
+            객실목록<br>
+                <select id="selRoom" size="12" style='width:280px'>
+                    <option value="101">백두산 Suite Room x4 120,000원</option>
+                    <option value="102">지리산 Family Room x6 130,000원</option>
+                    <option value="103">설악산 Single Room x2 60,000원</option>
+                    <option value="104">한라산 Deluxe Room x8 150,000원</option>
+                </select></ul>
+                <ul style="text-align:center ;"><br>
+                객실번호 <input type="text" id="roomNum"/><br><br>
+                객실종류명 <select id="roomType">
+                    <option value="Suite Room">Suite Room</option>
+                    <option value="Family Room">Family Room</option>
+                    <option value="Single Room">Single Room</option>
+                    <option value="Deluxe Room">Deluxe Room</option>
+                </select><br><br>
+                객실명 <input type="text" id="roomName"/><br><br>
+                숙박가능인원 <input type="text" id="howmany"/>명<br><br>
+                1박 요금 <input type="text" id="howmuch"/>원<br><br>
+                <button type="button" id="btnAddRoom">등록</button>
+                <button type="button" id="btnDelRoom">삭제</button>
+                </ul>
+        </div>
+        <div id="hotel2">
+            <table >
+                <tr>
+                    <td>예약가능목록</td><td>세부내역</td><td>예약완료목록</td><br>
+                </tr>  
+                <tr>
+                    <td>
+                        숙박기간<br> <input type="date" id="dateStart" style="width: 92px";/>
+                            ~<input type="date" id="dateEnd" style="width: 92px";/><br><br>
+                        숙박인원 <input type="text" id="people" style="width: 70px";/>명 
+                        <button type="button" id="btnSearch" style="float: right; margin-right: 20px;">찾기</button><br><br>
+                        <select id="selAvailable" size="12" style='width:240px;'>
+                                <!-- <option value="101">백두산 Suite Room x4 120,000원</option>
+                                <option value="102">지리산 Family Room x6 130,000원</option>
+                                <option value="103">설악산 Single Room x2 60,000원</option>
+                                <option value="104">한라산 Deluxe Room x8 150,000원</option> -->
+                        </select>
+                    </td>
+                    <td style="width: 320px;"><br>
+                        객실번호 <input readonly type="text" id="roomNum" /><br>
+                        객실종류 <input readonly type="text" id="roomType" /><br>
+                        객실명 <input readonly type="text" id="roomName" /><br><br>
+                        숙박예정인원 <input readonly type="text" id="peopleDetails" style="width: 50px"/>명<br>
+                        숙박기간<br> <input readonly type="text" id="dateStartDetails" style="width: 75px";/>
+                            ~<input readonly type="text" id="dateEndDetails" style="width: 75px";/><br>
+                        총비용 <input readonly type="text" id="price" /><br>
+                        예약자명 <input type="text" id="reservationName" /><br>
+                        모바일번호 <input type="text" id="mobile" /><br><br>
+                        <button type="button" id="btnAddBook">예약등록</button>
+                        <button type="button" id="btnDelBook">예약취소</button>
+                        <button type="button" id="btnEmpty">비우기</button>
+                        
+                    </td>
+                    <td>
+                        <select id="selBookedList" size="12" style='width:260px; height: 240px; '>
+            
+                        </select>
+                    </td>
+                </tr>
+        </div>
+    </div>
+</body>
+<script>
+roomType={};
+roomInfo={}
+arRoom=[];
+$(document)
+.ready(function(){
+    $('#dvHotel').tabs();
+    
+})
+
+// tab 객실종류관리 - 선택시 텍스트 칸에 출력
+.on('click','#selType',function(){
+    let rNum=$('#selType> option:selected').attr('value');
+    let rType=$('#selType> option:selected').text();
+
+    $('#typeNum').val(rNum);
+    $('#typeName').val(rType);
+})
+
+
+// tab 객실종류관리 - 객실 종류 및 번호 신규 등록 (등록시 중복확인)
+.on('click','#btnAddType',function(){
+
+    a=$('#typeNum').val();
+    b=$('#typeName').val();
+
+    roomType[a]=b;
+    let found=false;
+    $('#selType option').each(function(){
+        if($(this).val()==a){
+            found=true;
+            return false;
+        }
+    })
+    if(found==true){
+        // value==a인 option을 찾아서 그것의 text를 b로 지정
+        $('#selType option[value='+a+']').text(b);
+    } else {
+        $('#selType').append('<option value='+a+'>'+b+'</option>');
+    }
+    console.log(c);
+
+            // let str = '<option value1='+a+'value2='+b+'>'+b+'</option>';
+            // $('#selType').append(str);
+
+    
+    
+})
+
+// tab 객실종류관리 - 객실 종류 삭제
+.on('click','#btnDelType',function(){
+    $("#selType option:selected").remove();
+})
+
+
+// 객실 관리 - 선택시 출력
+.on('click','#selRoom',function(){
+    $('#selRoom> option:selected').each(function() {
+    let str1=$(this).text();
+    let arr1=str1.split(' ');
+
+    $('#roomName').val(arr1[0]);
+    // $('#roomType').val(arr1[1], arr1[2]);
+
+    $('#howmany').val(arr1[3]);
+    $('#howmuch').val(arr1[4]);
+
+    })
+
+    let rNum1=$('#selRoom>option:selected').attr('value');
+    $('#roomNum').val(rNum1);
+
+
+})
+
+
+
+
+// 객실 등록 (등록시 중복확인 기능.==> 업데이트)
+.on('click','#btnAddRoom',function(){
+    flag = false;
+    // 1.[true]:update 완료 후 break; 2.[false]:같은 객실번호가 없어서 추가해야 하는 경우.
+    for (i=0; i<arRoom.length;i++) {
+        roomInfo=arRoom[i];
+        if(roomInfo['num']==$('#roomNum').val()) {
+            arRoom[i]['type']=$('#roomType').val();
+            arRoom[i]['name']=$('#roomName').val();
+            arRoom[i]['many']=parseInt($('#howmany').val());
+            arRoom[i]['much']=parseInt($('#howmuch').val());
+            flag=true;
+            break;
+        }
+    }
+    if(flag==false) {
+            arRoom[i]['num']=$('#roomNum').val();
+            arRoom[i]['type']=$('#roomType').val();
+            arRoom[i]['name']=$('#roomName').val();
+            arRoom[i]['many']=parseInt($('#howmany').val());
+            arRoom[i]['much']=parseInt($('#howmuch').val());
+            arRoom.push(roomInfo);
+
+            // $('#selRoom').append('<option value='+num+'>'+name+' '+type+' '+many+' '+much);
+            
+    }
+    let str = '<option value='+arRoom[i]['num']+'>'+arRoom[i]['name']+', '
+             +arRoom[i]['type']+', x'+arRoom[i]['many']+', '+arRoom[i]['much']+'</option>';
+    $('#selRoom').append(str);
+    console.log(str);
+})
+
+// 객실 삭제
+.on('click','#btnDelRoom',function(){
+    $("#selRoom option:selected").remove();
+})
+
+
+// 찾기
+.on('click','#btnSearch',function(){
+    n=parseInt($('#person').val());
+    for(i=0;i<arRoom.length; i++) {
+        roomInfo = arRoom[i];
+        if(roomInfo['howmany']>=n) {
+            let str2 = '<option value='+roomInfo['num']+'>'+roomInfo['name']+', '
+                +roomInfo['type']+', x'+roomInfo['howmany']+', '+roomInfo['howmuch']+'</option>';
+                $('#selAvailable').append(str2);
+        }
+    }
+})
+
+
+.on('click','#selAvailable option',function(){
+    $('#btnEmpty').trigger('click');
+    let num=$(this).val();  // roomNum
+    for(i=0; i<arRoom.length;i++){
+        roomInfo=arRoom[i];
+        if(roomInfo['num']==num) {
+            // 세부내역 채우기
+            $('#dateStart')
+            break;
+        } 
+    }
+})
+
+// 비우기
+.on('click','#btnEmpty',function(){
+
+})
+
+// 예약 등록
+.on('click','#btnAddBook',function(){
+
+})
+
+// 예약 취소
+.on('click','#btnDelBook',function(){
+
+})
+
+
+.on('input','#dateStart',function(){ let dS=$('#dateStart').val(); $('#dateStartDetails').val(dS); })
+.on('input','#dateEnd',function(){ let dE=$('#dateEnd').val(); $('#dateEndDetails').val(dE); })
+.on('input','#people',function(){ let p=$('#people').val(); $('#peopleDetails').val(p); })
+</script>
+</html>

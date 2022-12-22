@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<body>
+<!-- <input type="text" id="name" class="home"><br> -->
+<input type="button" value="do something" id="btnGo"><br>
+<!-- <input type="text" id="name1" class="house"><br> -->
+<div id="dvSample" style='color:yellow'></div>
+</head>
+</body>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        // $(document)
+        // .ready(function(){
+        //     alert("load fineshed");
+        // })
+        // .on('click','#btnGo',function(){
+        //     $('#name,#name1').val("Hello World");
+        //     return false;
+        // })
+        // .on('blur','#name',function(){
+        //     alert('focus into the name');
+        // return false;
+        // })
+
+        $(document)
+        .ready(function(){
+        })
+        .on('click','#btnGo',function(){
+            $('#dvSample').css({width:'150px',height:'150px',backgroundColor:'red'})
+            $('#dvSample').css('color','yellow');   // 위는 여러개를 세팅할 때, 옆은 하나를 세팅할 때
+            $('#dvSample').html('<input type=button value=btnRun>');
+            // .text => 문자열을 텍스트로 보여줌
+            // .html => 뒤에 나오는 문자열을 html태그로 인식해 모양으로 표시
+        })
+
+        // 클릭시 .css가 작동하여 100*100의 빨간 네모가 표시됨
+
+        //     객체 선언 방법
+        //     obj ={name: John, age:24, gender:'male'}
+        //     let str = obj[name];
+        //     obj [name] = Jane;       ==> name에 Jane이 들어감
+    </script>
+
+</html>

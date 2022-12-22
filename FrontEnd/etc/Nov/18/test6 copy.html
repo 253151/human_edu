@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    td { width:50px; height:50px; text-align: center;}
+    .bgRed {background-color:red}
+    .bgBlue {background-color:blue}
+</style>
+<body>
+
+    <button id="btnDraw">테이블 그리기</button>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script> 
+<script>
+    $(document)
+    .on('click','td',function(){
+        if($(this).hasClass('bgRed')){
+            $(this).removeClass('bgRed');
+            $(this).addClass('bgBlue');
+        } else {
+            $(this).removeClass('bgBlue');
+            $(this).addClass('bgRed');
+        }
+        return false;
+    })
+    .on('click','#btnDraw',function(){
+        let str=prompt('숫자를 입력하시오');
+        let N=parseInt(str);
+        // NxN의 테이블을 그린다
+        $('btnDraw').before('<table border=1></table>');
+        for(i=0; i<N; i++) {
+            $('table').append('<tr></tr>');
+        }
+        for(i=0; i<N; i++) {
+            for(j=0; j<N; j++) {
+                $('table tr:eq('+i+')'.append('<td></td>'));    // i번째 tr에 td를 삽입한다. 
+            }
+        }
+
+        // str='';
+        // for(i=0; i<N; i++) {
+        //     str+='<tr>';
+        //         for(j=0;j<N;j++) {
+        //             str+='<td></td>';
+        //         }
+        //         str+='</tr>';
+        // }
+        // $('table').append(str);
+    })
+</script>
+</html>
+
+<!-- 
+    alert > 확인
+    confirm > Y/N 선택(boolean을 리턴)
+    prompt > 입력(문자열)
+ -->

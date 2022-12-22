@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    td { width:50px; height:50px; text-align: center;}
+</style>
+<body>
+    <table border=1>
+    </table>
+    <button id="btnDraw">테이블 그리기</button>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script> 
+<script>
+    $(document)
+    .on('click','#btnDraw',function(){
+        let str=prompt('숫자를 입력하시오');
+        let N=parseInt(str);
+        let a,b,c;
+        let set;
+        // NxN의 테이블을 그린다
+        for (a=1; a<=N; a++) {
+            a='<tr>';
+            set += a;
+            for(b = 1; b<=N; b++) {
+                b='<td></td>';
+                set += b;
+            }
+            c='</tr>'
+            set += c;
+
+        }
+
+        $('table').append(set);
+        
+
+})
+</script>
+</html>
+
+<!-- 
+    alert > 확인
+    confirm > Y/N 선택(boolean을 리턴)
+    prompt > 입력(문자열)
+ -->

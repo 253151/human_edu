@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txtNum"><br><br><br>
+    <button id="btnPlus">+1</button><br><br><br>
+    <input type="test" id="result">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script> 
+    <script>
+        // $(document)
+        // .on('click','#btnPlus',function(){
+        //     let n=$('#txtNum').val();
+        //     n=n+1;                       ==> .val이 n을 문자열로 인식, 더해지지 않고 "n"1로 출력됨
+        //     $('#result').val(n);             한쪽이라도 문자> 연결연산자, 둘다 숫자> 산술연산자
+        // }) 
+
+        $(document)
+        .on('click','#btnPlus',function(){
+            let n=$('#txtNum').val();
+            if(isNaN(n)){
+                $('#result').val("더하기 불가");
+            } else {
+            n=parseInt(n)+1;             // ==> parseInt 숫자열로 변환.
+            $('#result').val(n);
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script> 
+</head>
+<style>
+    td { width:50px; height:50px; text-align: center;}
+</style>
+<body>
+    <table border=1>
+        <tr>
+            <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td></td><td></td><td></td><td></td>
+        </tr>
+    </table>
+    <br><br>
+    <button id="btnFill">채우기</button>
+</body>
+<script>
+// 1~16까지 채우는 코드(for문)
+$(document)
+.on('click','#btnFill',function(){
+    let i=0, j=0, a=1, b=8, c=16;
+    for (i=0;i<3;i++) {
+        for (j=0;j<4;j++) {
+            $('table tr:eq('+i+') td:eq('+j+')').text(a++);
+        }
+    }
+    for (i=1;i<2;i++) {
+        for (j=0;j<4;j++) {
+            $('table tr:eq('+i+') td:eq('+j+')').text(b--);
+        }
+    }
+    for (i=3;i<4;i++) {
+        for (j=0;j<4;j++) {
+            $('table tr:eq('+i+') td:eq('+j+')').text(c--);
+        }
+    }
+})
+
+
+</script>
+</html>

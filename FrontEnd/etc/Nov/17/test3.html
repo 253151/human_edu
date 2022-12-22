@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script> 
+</head>
+<body>
+    <input type="text" id="txtNumber"><br><br>
+    <button id="btnStart">시작</button>
+</body>
+<script>
+    // 시작을 누르면 0.5초 간격으로 txtNumber에 1부터 10까지만 출력하기
+    // setInterval, clearInterval, 전역변수
+
+    // let g;
+    // $(document)
+    // .on('click','#btnStart',function(){
+    //     let n=$('#txtNumber').val();
+    //     if (n<11) {
+    //     g=setInterval(function(){
+    //         n=parseInt(n)+1; 
+    //         $('#result').val(n);
+    //     },500)
+    //     } else {
+    //         clearInterval(g);
+    //     $('#txtNumber').val('');
+    //     let str=$('#txtNumber').val()
+    //     }
+    // }) 
+        let g;
+    $(document)
+    .on('click','#btnStart',function(){
+        let n=$('#txtNumber').val();
+            g=setInterval(function(){
+            n=n++;
+
+            if (n>10) {
+                clearInterval(g);
+                $('#txtNumber').val('');
+                // let str=$('#txtNumber').val(); 
+            } else {
+            $('#txtNumber').val(n);
+            }
+            },500);
+        //  } else {
+        //     clearInterval(g);
+        // $('#txtNumber').val('');
+        // let str=$('#txtNumber').val()
+        // }
+    }) 
+</script>
+</html>

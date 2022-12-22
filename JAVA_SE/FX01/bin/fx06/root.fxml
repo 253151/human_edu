@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane prefHeight="200.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <top>
+      <ToolBar>
+        <items>
+			<Button text="Open File" />
+			<Button text="Open Internet" />
+        </items>
+      </ToolBar>
+   </top>
+   <center>
+      <TextArea />
+   </center>
+   <bottom>
+      <BorderPane>
+         <center>
+            <TextField text="JISU" />
+         </center>
+         <right>
+            <Button text="Button" />
+         </right>
+      </BorderPane>
+   </bottom>
+</BorderPane>

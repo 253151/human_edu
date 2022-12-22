@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    #human1 {
+        background-color: red;
+    }
+    .human2 {
+        /* h2 tag 중 id가 있는 문서만 적용되는 스타일 */
+        background-color: green
+    }
+    h1[dir="a"] {
+        background-color: yellow;
+    }
+</style>
+</head>
+<body>
+    <h1> 휴먼교육센터1 </h1>
+    <h1> 휴먼교육센터2 </h1>
+    <h1 id="human1"> 휴먼교육센터3 </h1>
+    <h1 class="human2"> 휴먼교육센터4 </h1>
+    <h1 class="human2"> 휴먼교육센터5 </h1>
+    <h1 id="human1" class="human2"> 휴먼교육센터6 </h1>
+
+    <h1 id="i1" class="c1"> 휴먼1 </h1>
+    <h1 id="i2" class="c1"> 휴먼2 </h1>
+    <h1 id="i3" class="c1"> 휴먼3 </h1>
+    <h1 id="i4" class="c2"> 휴먼4 </h1>
+    <h1 id="i5" class="c2"> 휴먼5 </h1>
+    <h1 id="i1" class="c2"> 휴먼6 </h1>
+    <h1 id="i1" class="c3"> 휴먼7 </h1>
+
+    <ol>
+        <li>1순위 : 태그 개별적으로 적용하기 위해서는 id 기준으로 style을 처리</li>
+        <li>2순위 : 부분집합적으로 적용하기 위해서는 class 기준으로 style을 처리</li>
+        <li>3순위 : Tag 전체의 내용을 적용하기 위해서는 Tag 기준으로 style을 처리</li>
+    </ol>
+    <br>
+    <br>
+    <br>
+    <h2>휴몬교육센터11</h2>
+    <h2 id="human01">휴몬교육센터12</h2>
+    <h2>휴몬교육센터12</h2>
+    <h2>휴몬교육센터12</h2>
+    
+    </body>
+</html>

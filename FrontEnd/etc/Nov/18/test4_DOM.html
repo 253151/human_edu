@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- DOM(Document Object Model, html tag의 계층구조) -->
+</head>
+<body>
+<table>
+    <table border=1 id="tblData">
+        <thead>
+            <tr><th>이름</th><th>모바일</th><th>지역</th></tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+        </table><br><br>
+<table>
+    <tr>
+        <td>
+            <table>
+            <tr><td>이름:<input type=text id=name></td></tr>
+            <tr><td>모바일:<input type=text id=mobile></td></tr>
+            <tr><td>지역:<input type=text id=region></td></tr>
+            <button id=btnNew>앞에 추가</button><button id=btnNew1>뒤에 추가</button>
+            </table>
+        </td>
+    </tr>
+    </table>
+    <!-- <tr>
+        <td>1</td><td>2</td><td>3</td>
+    </tr>
+    <tr>                                    계층구조(root, branch, leaf-terminal)
+        <td>4</td><td>5</td><td>6</td>
+    </tr>
+    </table><br><br>
+    <button id ="btnGo">Do</button> -->
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script> 
+<script>
+    // javascript/java에서 index는 항상 0부터 시작
+$(document)
+.on('click','#btnNew',function(){
+    let a=$('#name').val();
+    let b=$('#mobile').val();
+    let c=$('#region').val();
+    // $('table tr:eq(1) td:eq(2)').text('Six');   
+    // eq = equal, (숫자) => index Num, 인덱스 번호에 있는 문자열을 .text()로 바꿔줌
+    // $('table').append('<tr><td>7</td><td>8</td><td>9</td></tr>');  
+    // let str = '<tr><td>'+(a)+'</td><td>'+(b)+'</td><td>'+(c)+'</td></tr>';
+    // $('#tblData tbody').prepend(str);
+    $('#tblData').before
+
+})
+
+$(document)
+.on('click','#btnNew1',function(){
+    let a=$('#name').val();
+    let b=$('#mobile').val();
+    let c=$('#region').val();
+    let str = '<tr><td>'+(a)+'</td><td>'+(b)+'</td><td>'+(c)+'</td></tr>';
+    $('#tblData tbody').append(str);
+
+})
+
+    // .append = 대상태그의 영역 안, 마지막에 추가
+    // .prepend = 대상태그의 영역 안, 처음에 추가
+    // .before = 대상태그의 영역 밖, 앞에 추가
+    // .after = 대상태그의 영역 밖, 뒤에 추가
+
+
+    // .addClass()
+    // .removeClass()
+    // .hasClass() - 해당클래스가 들어있으면 true
+    // .css({속성:값...속성:값})
+    // .css(속성,값)
+</script>
+</html>

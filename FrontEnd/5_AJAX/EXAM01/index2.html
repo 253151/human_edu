@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="비동기 통신 Test1"
+        onclick="
+        // fetch는 파일을 비동기 식으로 요청하는데, 회신 받았을 때 callbackme 함수를 수햄함
+        // 요청 후 바로 다음 동작을 수행함.
+            fetch('./txt/javascript').then(callbackme);
+            function callbackme() {
+                console.log('response OK');
+            }
+            console.log(1);
+            console.log(2);
+            console.log(3)
+            "
+    />
+    <input type="button" value="문서회신1"
+            onclick = "
+// fetch를 통해서 문서를 받아오는데.
+// 해당으 ㅣ문서는 response에 담겨서 돌아온다.
+// 그리고 response는 성공여부 등을 포함한 결과들이 있다.
+                        fetch('./txt/javascript').then(function(response) {
+                            response.text().then(function(text){
+                                alert(text);
+                                console.log(response);
+                            })
+                        });
+                        "
+    />
+    <input type="button" value="문서회신2"
+            onclick = "
+                        fetch('./txt/javascript').then(function(response) {
+                            response.text().then(function(text){
+                                if(response.status == 200) {
+                                alert(text);
+                                }
+                                else {
+                                console.log(response);
+                                }
+                            })
+                        });
+                        "
+    />
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</head>
+<style>
+#dvHotel {  width:760px; height:700px; margin:auto; }   
+#hotel0 { width:700px; height:620px; background-color:grey; }
+#hotel1 { width:700px; height:620px; background-color:yellow; }
+#hotel2 { width:700px; height:620px; background-color:aqua; }
+</style>
+<body align="center">
+    <h1>호텔관리 시스템</h1>
+    <div id="dvHotel" align="center">
+        <ul>
+            <li><a href='#hotel0'>객실종류관리</a></li>
+            <li><a href='#hotel1'>객실관리</a></li>
+            <li><a href='#hotel2'>예약관리</a></li>
+        </ul>
+        <div id="hotel0">
+
+        </div>
+        <div id="hotel1">
+
+        </div>
+        <div id="hotel2">
+
+        </div>
+    </div>
+</body>
+<script>
+roomtype={};
+$(document)
+.ready(function(){
+    $('#dvHotel').tabs();
+})
+.on('click','#btnAddType',function(){
+    a=$('#typenum').val();
+    b=$('#typename').val();
+    let str = '<option value="'+a+'">+b+'</option>';
+    console.log(str);
+    $('#roomtype').append(str);
+    roomtype[a]=b;
+})
+</script>
+</html>

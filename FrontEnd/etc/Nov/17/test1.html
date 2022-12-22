@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>   
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script> 
+<!-- Jquery 사용시 꼭 있어야함 <html>태그 사이에 작성 -->
+</head>
+<body>
+<input type="text" id="txtstr" size='60'><br><br><br>
+<button id="btnRun">Run</button>&nbsp;&nbsp;&nbsp;<button id="btnStop">Stop</button>
+</body>
+<script>
+let g;  // 전역변수 (global variable)
+$(document)
+.on('click','#btnRun',function(){
+    g=setInterval(function(){
+    $('#txtstr').val(new Date());
+    },1000)
+})
+.on('click','#btnStop',function(){
+    clearInterval(g);
+    $('#txtstr').val('');
+    let str=$('#txtstr').val()  // 지역변수 (local variable) 
+    // .val 저장된 "문자열"을 불러옴 -> 숫자취급을 하려면 숫자로 바꿔줘야 함
+})
+</script>
+</html>
+
+
+
+<!-- 
+    n=setTimeout(함수, 시간) - 일정시간 후에 실행(지연)
+    clearTimeout(n) - 예약된 작업을 취소
+    m=setInterval(함수, 시간) - 일정시간마다 실행(반복)
+    clearInterval(m)
+    
+    --Getter/Setter의 역할을 함, "문자열"을 리턴--
+    m=.val()
+      .text()
+      .html()
+
+    NaN == Not a Number
+    isNaN(a) 숫자가 아니면 true
+             숫자면 false
+                 
+    &nbsp; => 한칸 띄우기
+ -->
