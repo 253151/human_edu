@@ -7,40 +7,22 @@
  # JAVA_SE
    - 기간 : 2022.10.04~
    - 사용툴 : Eclipse_SE 3.18.13
-   - 주요내용 : 기초 자바 지식
+   - 주요내용 : 
 
 
  # FrontEnd 과정
    - JAVA_EE 
-      - 기간 : 2022..~
-      - 사용툴 : Eclipse_EE
-      - 주요내용 : 
-   
    - JQuery
-      - 기간 : 2022..~
-      - 사용툴 : Eclipse_EE, Visual Studio Code
-      - 주요내용 : 
-
    - Spring 
-      - 기간 : 2022..~
-      - 사용툴 : Eclipse_EE, Visual Studio Code
-      - 주요내용 : 
-
    - MyBatis 
-      - 기간 : 2022..~
-      - 사용툴 : Eclipse_EE, Visual Studio Code
-      - 주요내용 : 
-   
    - AJAX 
-      - 기간 : 2022..~
-      - 사용툴 : Eclipse_EE, Visual Studio Code
-      - 주요내용 : 
+      - 사용툴 : Eclipse EE, Visual Studio Code
 
    
 # Oracle
-   - 기간 : 2022.??.??~
+   - 기간 : 2022.11.??~
    - 사용툴 : Oracle
-   - 주요내용 : 
+   - 주요내용 : Oracle 기초문법, 
 
 
  # R
