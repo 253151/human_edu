@@ -10,7 +10,7 @@
    - 주요내용 : 
 
 
- # FrontEnd 과정
+ # FrontEnd
    - JAVA_EE 
    - JQuery
    - Spring 
