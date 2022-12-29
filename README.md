@@ -12,27 +12,27 @@
 
  # FrontEnd 과정
    - JAVA_EE 
-      - 기간 : 2022.??.??~
+      - 기간 : 2022..~
       - 사용툴 : Eclipse_EE
       - 주요내용 : 
    
    - JQuery
-      - 기간 : 2022.??.??~
+      - 기간 : 2022..~
       - 사용툴 : Eclipse_EE, Visual Studio Code
       - 주요내용 : 
 
    - Spring 
-      - 기간 : 2022.??.??~
+      - 기간 : 2022..~
       - 사용툴 : Eclipse_EE, Visual Studio Code
       - 주요내용 : 
 
    - MyBatis 
-      - 기간 : 2022.??.??~
+      - 기간 : 2022..~
       - 사용툴 : Eclipse_EE, Visual Studio Code
       - 주요내용 : 
    
    - AJAX 
-      - 기간 : 2022.??.??~
+      - 기간 : 2022..~
       - 사용툴 : Eclipse_EE, Visual Studio Code
       - 주요내용 : 
 
@@ -45,6 +45,11 @@
 
  # R
    - 기간 : 2022.12.19~2022.12.23
+   - 사용툴 : R Studio
    - 강의 주제 : R 기초 문법, 데이터 가공, 데이터 시각화, 텍스트 마이닝, 지도 시각화
    - 주요 패키지 : dplyr, ggplot2, KoNLP, ggmap, googleVis
+
+
+# Python
+   - 기간 : 2022.12.26 ~
 
