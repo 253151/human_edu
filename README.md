@@ -34,10 +34,11 @@
 
 # Python
    - 기간 : 2022.12.26 ~ 12.30, 2023.01.09 ~ 01.27
+   - 사용툴 : Google Colab, Jupyter Notebook, Pycharm, VS Code
 
 
 
 
-# MySQL & 웹크롤링, 머신러닝·딥러닝 맛보기
+# MySQL & 웹크롤링, ML·DL 맛보기
    - 기간 : 2023.01.02 ~ 2023.01.06
 
