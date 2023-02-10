@@ -50,6 +50,6 @@
  - **프로젝트 개요**
    - 부동산 시세 예측
    - 전월세 실거래가 정보 제공
- - [repo링크] (https://github.com/253151/project_01)
- - [내방어디] (https://253151-project01-app-63poal.streamlit.app/)
+ - **[repo링크]** (https://github.com/253151/project_01)
+ - **[내방어디]** (https://253151-project01-app-63poal.streamlit.app/)
 
