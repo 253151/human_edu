@@ -39,7 +39,7 @@
 
 
 ## Project 01 : 내 방 어디?
- - 기간 : 2023.01.30 ~
+ - 기간 : 2023.01.30 ~ 02.10
  - 사용언어 : Python 3.11.1
  - 사용툴 : VS Code 1.74.1
  - 주요 라이브러리 : streamlit 1.17.0, pandas 1.5.2, numpy 1.24.0
@@ -47,4 +47,6 @@
  - 프로젝트 개요
    - 부동산 시세 예측
    - 전월세 실거래가 정보 제공
- - [repo링크] (https://github.com/253151/project_property)
+ - [repo링크] (https://github.com/253151/project_01)
+ - [내방어디] (https://253151-project01-app-63poal.streamlit.app/)
+
