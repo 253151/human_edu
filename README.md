@@ -12,7 +12,7 @@
    - 전월세 실거래가 정보 제공
    - 부동산 시세 예측
  - **[Repository]** (https://github.com/253151/project_01)
- - **[내방어디]** (https://253151-project01-app-63poal.streamlit.app/)
+ - **[내방어디]** (https://whereismyroom.streamlit.app/)
 
  ## 📗 Project 02. 
  - **기간** :
