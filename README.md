@@ -10,8 +10,8 @@
  - **프로젝트 개요**
    - 전월세 실거래가 정보 제공
    - 부동산 시세 예측
- - **[Repository 자세히 보기]**(https://github.com/253151/project_01)
- - **[내방어디 배포링크 바로가기]**(https://whereismyroom.streamlit.app/)
+ - **[Repository 자세히 보기](https://github.com/253151/project_01)**
+ - **[내방어디 바로가기](https://whereismyroom.streamlit.app/)**
 
  ## 📗 Project 02. 
  - **기간** :
