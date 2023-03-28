@@ -13,27 +13,39 @@
  - **[프로젝트 내용 자세히보기](https://github.com/253151/project_01)**
  - **[내방어디 바로가기](https://whereismyroom.streamlit.app/)**
 
- ## 📗 Project 02. 
- - **기간** :
+ ## 📗 Project 02. _Last Carnival_
+ - **기간** : 2023.03 ~ 진행중
  - **사용언어** : JAVA
- - **사용툴** :
-
+ - **사용툴** : Eclipse, VS Code,
+ - **역할** : 건의사항 탭 UI 및 기능 구현
+ - **프로젝트 개요**
+   - 음악 차트 
+   - 주제별 음악 커뮤니티 
  
  ## 📖 학습언어
 
  ### BackEnd
 
  #### JAVA_SE
-   - **기간** : 2022.10.04~
+   - **기간** : 2022.10.04~2022.11.04
    - **사용툴** : Eclipse_SE 3.18.13
-   - **주요내용** : 
+   - **주요내용** : Java 기초문법
 
    
  #### Oracle
-   - **기간** : 2022.11.??~
+   - **기간** : 2022.11.07~ 2022.11.11
    - **사용툴** : Oracle
-   - **주요내용** : Oracle 기초문법 외
+   - **주요내용** : SQL 기초문법 외
 
+ ### FrontEnd & 웹개발
+   - JAVA_EE 
+   - JQuery
+   - Spring 
+   - MyBatis 
+   - AJAX 
+      - 사용툴 : Eclipse EE, Visual Studio Code
+      - 기간 : 2022.11.13~2022.12.16
+      - 주요내용 : 카페 주문 관리 시스템, 호텔 예약 시스템 구현 외
 
  #### R
    - **기간** : 2022.12.19~2022.12.23
@@ -54,13 +66,7 @@
 
  
 
- ### FrontEnd
-   - JAVA_EE 
-   - JQuery
-   - Spring 
-   - MyBatis 
-   - AJAX 
-      - 사용툴 : Eclipse EE, Visual Studio Code
+
 
 
 ##
