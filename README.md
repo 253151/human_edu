@@ -14,13 +14,14 @@
  - **[내방어디 바로가기](https://whereismyroom.streamlit.app/)**
 
  ## 📗 Project 02. _Last Carnival_
- - **기간** : 2023.03 ~ 진행중
- - **사용언어** : JAVA
- - **사용툴** : Eclipse, VS Code,
- - **역할** : 건의사항 탭 UI 및 기능 구현
+ - **기간** : 2023.03.27 ~ 04.12
+ - **사용언어** : JAVA, JQuery, Ajax, CSS, HTML
+ - **사용툴** : Eclipse, VS Code, MySQL, MongoDB
+ - **역할** : 커뮤니티 게시판(CRUD), 대댓글 기능 구현 및 프론트엔드 백업
  - **프로젝트 개요**
-   - 음악 차트 
+   - 음악 차트 제공
    - 주제별 음악 커뮤니티 
+ - **[프로젝트 내용 자세히보기](https://github.com/253151/project02)**
  
  ## 📖 학습언어
 
@@ -41,6 +42,7 @@
    - JAVA_EE 
    - JQuery
    - Spring 
+   - Spring Boot
    - MyBatis 
    - AJAX 
       - 사용툴 : Eclipse EE, Visual Studio Code
