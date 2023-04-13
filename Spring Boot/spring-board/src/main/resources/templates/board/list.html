@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>게시글 목록</title>
+</head>
+<body>
+	<h1>게시글 목록</h1>
+	
+	<form action="/board/list" method="get">
+		<a href="/board/insert">글쓰기</a>
+		<input type="text" name="keyword" th:value="${param.keyword}" 
+				placeholder="검색어를 입력히세요">
+		<button type=submit>검색</button>
+	</form>
+<table border="1">
+	<tr>
+		<th width="50">번호</th>
+		<th width="300">제목</th>
+		<th width="100">작성자</th>
+		<th width="200">등록일자</th>
+		<th width="200">수정일자</th>
+	</tr>
+	
+	<!-- 
+		타임리프 태그 반복문
+		th:each="요소 : ${배열, 컬렉션}"
+		
+		타임리프 블록 태그 
+		<th:block> : 필요한 데이터를 블록으로 묶는 태그
+					*브라우저가 렌더링 할 때 사라진다
+	 -->
+	
+	<th:block th:each="board : ${boardList}">
+		<tr>
+			<td width="50" align="center" th:text="${board.boardNo}"></td>
+			<td width="300"> 
+				<a th:href="|/board/read?boardNo=${board.boardNo}|" th:text="${board.title}"></a>
+			</td>
+			<td width="100" align="center" th:text="${board.writer}"></td>
+			
+			<!-- ${ } : th:속성 안에서 모델에 등록된 변수의 값읗ㄹ 가져오는 기호 -->
+			<!-- 
+				LocalDateTime 타입 날짜 포맷 
+				th:text="${ #temporals.format(날짜데이터, '날짜형식') }"
+				
+				(예시)	
+				th:text="${ #temporals.format(board.regDate, 'yyyy-MM-dd HH:mm:ss') }"
+			-->
+			<!-- 
+				Date 타입 날짜 포맷
+				th:text="${ #dates.format(날짜데이터, '날짜형식')}" 
+			-->
+			<td width="200">
+				<span th:text="${ #temporals.format(board.regDate, 'yyyy-MM-dd HH:mm:ss') }"></span> 
+			</td>
+			<td width="200">
+				<span th:text="${ #temporals.format(board.updDate, 'yyyy-MM-dd HH:mm:ss') }"></span>
+			</td>
+		</tr>
+	</th:block>
+	
+	
+	
+</table>
+	
+</body>
+</html>
+
+
