@@ -15,8 +15,8 @@
 
  ## 📗 Project 02. _Last Carnival_
  - **기간** : 2023.03.23 ~ 04.04
- - **사용언어** : JAVA, JQuery, Ajax, CSS, HTML
- - **사용툴** : Eclipse, VS Code, MySQL, MongoDB
+ - **사용언어** : JAVA, JQuery, JavaScript, Ajax, CSS, HTML, SQL
+ - **사용툴** : Eclipse 4.25.0, VS Code 1.74.1, MySQL 8.0.31, MongoDB
  - **역할** : 커뮤니티 게시판(CRUD), 대댓글 기능 구현 및 프론트엔드 백업
  - **프로젝트 개요**
    - 음악 차트 제공
